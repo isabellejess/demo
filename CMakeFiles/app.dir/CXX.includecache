@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ubuntu/yukbisa/test1.cpp
+/home/isabellej/demo/test1.cpp
 bits/stdc++.h
 -
 opencv2/opencv.hpp
