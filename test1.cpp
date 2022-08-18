@@ -5,7 +5,7 @@ using namespace std;
 using namespace cv;
 
 int main(int argc, char** argv) {
-    VideoCapture vid("video/demo.mp4");
+    VideoCapture camera(0);
     Mat frame,tresh,frame_resize,frame_hsv;
     int L_H = 0;
     int U_H = 7;
@@ -22,9 +22,9 @@ int main(int argc, char** argv) {
     // createTrackbar ("U_V", "atur", &U_V, 255);
 
     while (true){
-        vid.read(frame);
+        camera.read(frame);
         resize(frame,frame_resize,Size(),0.5,0.5);
-        rotate(frame_resize,frame_resize,ROTATE_90_CLOCKWISE);
+        // rotate(frame_resize,frame_resize,ROTATE_90_CLOCKWISE);
         cvtColor(frame_resize,frame_hsv, COLOR_BGR2HSV);        
         inRange(frame_hsv, Scalar (L_H, L_S, L_V), Scalar(U_H, U_S, U_V), tresh);
 
